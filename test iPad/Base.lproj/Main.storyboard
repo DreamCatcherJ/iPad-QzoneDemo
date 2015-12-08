@@ -187,6 +187,7 @@
                         <outlet property="accountView" destination="GeG-f8-47j" id="icN-vd-OhJ"/>
                         <outlet property="autoLoginBtn" destination="bZL-4d-nIB" id="Xi8-5H-bNE"/>
                         <outlet property="loading" destination="vV6-Wj-ak7" id="kxb-h5-Ide"/>
+                        <outlet property="loginView" destination="BvB-XP-KEb" id="FQr-oK-k0P"/>
                         <outlet property="psdView" destination="AIF-4u-4hl" id="w4w-AO-DHK"/>
                         <outlet property="rmbPasswordBtn" destination="f28-bn-caO" id="6QL-PJ-ngn"/>
                     </connections>

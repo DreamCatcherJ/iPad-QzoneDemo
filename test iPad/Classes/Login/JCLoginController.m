@@ -11,6 +11,7 @@
 
 @interface JCLoginController ()
 
+@property (weak, nonatomic) IBOutlet UIView *loginView;
 @property (weak, nonatomic) IBOutlet UITextField *accountView;
 
 @property (weak, nonatomic) IBOutlet UITextField *psdView;
@@ -95,15 +96,15 @@
     NSString *psd = self.psdView.text;
     
     if (account.length == 0) {
-        [SVProgressHUD showErrorWithStatus:@"账号不能为空"];
+        [self alertMessage:UserNameErrorHint];
         return;
     }
     if (psd.length == 0) {
-        [SVProgressHUD showErrorWithStatus:@"密码不能为空"];
+        [self alertMessage:PasswordErrorHint];
         return;
     }
     if (!([account isEqualToString:@"dC_R"] && [psd isEqualToString:@"dC_R"])) {
-        [SVProgressHUD showErrorWithStatus:@"账号或密码错误"];
+        [self alertMessage:LoginErrorHint];
         return;
     }
     [self.loading startAnimating];
@@ -125,6 +126,23 @@
     });
     
 }
+
+// 弹出提示
+- (void)alertMessage:(NSString *)message
+{
+    [SVProgressHUD showErrorWithStatus:message];
+    
+    // 抖动动画
+    // 1. 创建帧动画
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
+    animation.repeatCount = 4;  // 重复次数
+    animation.values = @[@(10), @(0), @(-10), @(0)];    // 动画的值
+    animation.duration = 0.1;   // 动画时间
+    // 2. 添加动画
+    [self.loginView.layer addAnimation:animation forKey:@"DouDongAnimation"];
+}
+
+
 @end
 
 

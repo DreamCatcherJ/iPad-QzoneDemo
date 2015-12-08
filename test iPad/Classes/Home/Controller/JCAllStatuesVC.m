@@ -7,7 +7,7 @@
 //
 
 #import "JCAllStatuesVC.h"
-
+#import "JCLoginController.h"
 @implementation JCAllStatuesVC
 
 - (void)viewDidLoad
@@ -28,6 +28,24 @@
 - (void)exit
 {
     // 返回登陆界面
+    // UIAlertController
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"注销" preferredStyle:UIAlertControllerStyleAlert];
+    // 添加按钮
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setBool:NO forKey:JCLoginAutoLogin];
+
+        JCLoginController *loginC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
+        
+        WINDOW.rootViewController = loginC;
+        
+    }];
+    [alert addAction:cancelAction];
+    [alert addAction:confirmAction];
+    [self presentViewController:alert animated:YES completion:nil];
+
     
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import "JCBaseView.h"
-
+#import "JCContentView.h"
 @interface JCBaseView ()
 
 @end
@@ -42,7 +42,7 @@
 }
 - (void)dealloc{
 
-    [self removeObserver:self forKeyPath:kNotificationTransition];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 + (BOOL)requiresConstraintBasedLayout{

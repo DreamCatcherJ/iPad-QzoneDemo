@@ -176,6 +176,9 @@
     
     [self presentViewController:nav animated:YES completion:nil];
 }
+- (void)dealloc{
+    DLog(@"");
+}
 @end
 
 

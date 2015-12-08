@@ -13,4 +13,8 @@
 #define JCPSD @"JCPSD"
 #define JCLoginRemeberPsd @"JCLoginRemeberPsd"
 #define JCLoginAutoLogin @"JCLoginAutoLogin"
+#define UserNameErrorHint @"用户名不能空"
+#define PasswordErrorHint @"密码不能空"
+#define LoginErrorHint  @"用户名或密码不正确"
+
 #endif /* UserBehaviorMacros_h */

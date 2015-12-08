@@ -119,7 +119,7 @@
 
 - (void)dealloc{
     
-    [self removeObserver:self forKeyPath:kNotificationTransition];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

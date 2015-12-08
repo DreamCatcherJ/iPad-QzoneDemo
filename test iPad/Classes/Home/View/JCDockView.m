@@ -109,8 +109,6 @@
         [self.delegate dockView:self didSelectedBottomMenuItem:item];
     }
 }
-
-
 @end
 
 

@@ -1,0 +1,18 @@
+//
+//  qqZone.pch
+//  test iPad
+//
+//  Created by mac on 15/12/6.
+//  Copyright © 2015年 mac. All rights reserved.
+//
+
+#ifndef qqZone_pch
+#define qqZone_pch
+
+#import <Masonry.h>
+#import <SSKeychain.h>
+#import <SVProgressHUD.h>
+#import "Macros.h"
+#import "UIView+ZUtility.h"
+
+#endif /* qqZone_pch */
